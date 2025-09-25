@@ -1,7 +1,11 @@
 [package]
 name = "input"
 version = "0.1.0"
-authors = ["yogya"]
-edition = "2024"
+authors = ["Yogya <yogya.coder@gmail.com>"]
+edition = "2021"
+description = "A fluent CLI input crate for Rust, supporting all integer, float, bool, and string types; easier to use unlike the standard std::io"
+license = "MIT"
+repository = "https://github.com/lilcloudcoder/RustInput"
 
 [dependencies]
+# No external dependencies needed for now
