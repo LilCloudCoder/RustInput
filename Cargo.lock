@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "input"
+name = "RustInput"
 version = "0.1.0"

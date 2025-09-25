@@ -1,5 +1,5 @@
 [package]
-name = "input"
+name = "RustInput"
 version = "0.1.0"
 authors = ["Yogya <yogya.coder@gmail.com>"]
 edition = "2021"
