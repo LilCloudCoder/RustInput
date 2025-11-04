@@ -66,6 +66,7 @@ impl Input {
         }
     }
 
+    /// Parse a bool (y/yes/true/1 = true, n/no/false/0 = false)
     pub fn bool(&self) -> bool {
         loop {
             let val = self.string();
