@@ -1,6 +1,6 @@
 # Fluent Input 🦀
 
-Simple, fluent input for Rust CLI apps; easier to use unlike the standart `std::io`.
+Simple, fluent input for Rust CLI apps — easier to use than the standard `std::io`.
 
 ---
 
