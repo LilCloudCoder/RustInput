@@ -31,7 +31,6 @@ impl Input {
             let mut input = String::new();
             io::stdin().read_line(&mut input).unwrap();
             let trimmed = input.trim();
-
             match trimmed.parse::<T>() {
                 Ok(val) => return val,
                 Err(_) => println!("Invalid input, enter a valid number."),
