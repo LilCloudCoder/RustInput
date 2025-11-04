@@ -1,6 +1,6 @@
 [package]
 name = "RustInput"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Yogya <yogya.coder@gmail.com>"]
 edition = "2021"
 description = "A fluent CLI input crate for Rust, supporting all integer, float, bool, and string types; easier to use unlike the standard std::io"
