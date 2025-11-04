@@ -4,7 +4,18 @@ Simple, fluent input for Rust CLI apps — easier to use than the standard `std:
 
 ---
 
-## Usage
+## Install
+
+Add to your project's `Cargo.toml` (example):
+
+```toml
+[dependencies]
+rustinput = { git = "https://github.com/lilcloudcoder/RustInput" }
+```
+
+Note: inside this repository the crate name is `RustInput` (PascalCase). In external projects, Cargo will expose it as `rustinput` (snake_case).
+
+## Quick start
 
 ```rust
 use input::input;
