@@ -18,7 +18,8 @@ Note: inside this repository the crate name is `RustInput` (PascalCase). In exte
 ## Quick start
 
 ```rust
-use input::input;
+// In external projects
+use rustinput::input; // or: use rustinput::Input;
 
 fn main() {
     let a: i32 = input("Enter i32: ").int();
