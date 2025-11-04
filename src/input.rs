@@ -10,7 +10,17 @@ impl Input {
         Self { prompt: prompt.to_string() }
     }
 
-    pub fn int<T: FromStr>(&self) -> T
+    // Internal: print prompt and read a line
+    fn read_line(&self) -> String {
+        print!("{}", self.prompt);
+        io::stdout().flush().ok();
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).ok();
+        input
+    }
+
+    // Internal: repeatedly parse using FromStr with custom error message
+    fn parse_loop<T: FromStr>(&self, invalid_msg: &str) -> T
     where
         T::Err: std::fmt::Debug,
     {
