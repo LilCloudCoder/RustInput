@@ -25,33 +25,45 @@ impl Input {
         T::Err: std::fmt::Debug,
     {
         loop {
-            print!("{}", self.prompt);
-            io::stdout().flush().unwrap();
-
-            let mut input = String::new();
-            io::stdin().read_line(&mut input).unwrap();
+            let input = self.read_line();
             let trimmed = input.trim();
             match trimmed.parse::<T>() {
                 Ok(val) => return val,
-                Err(_) => println!("Invalid input, enter a valid number."),
+                Err(_) => println!("{}", invalid_msg),
             }
         }
     }
 
+    /// Parse any integer type (i8..i128, u8..u128, isize, usize)
+    pub fn int<T: FromStr>(&self) -> T
+    where
+        T::Err: std::fmt::Debug,
+    {
+        self.parse_loop::<T>("Invalid input, enter a valid integer.")
+    }
+
+    /// Parse any float type (f32, f64)
     pub fn float<T: FromStr>(&self) -> T
     where
         T::Err: std::fmt::Debug,
     {
-        self.int::<T>()
+        self.parse_loop::<T>("Invalid input, enter a valid number.")
     }
 
+    /// Read a trimmed string
     pub fn string(&self) -> String {
-        print!("{}", self.prompt);
-        io::stdout().flush().unwrap();
+        self.read_line().trim().to_string()
+    }
 
-        let mut input = String::new();
-        io::stdin().read_line(&mut input).unwrap();
-        input.trim().to_string()
+    /// Read a single non-whitespace character
+    pub fn char(&self) -> char {
+        loop {
+            let s = self.string();
+            if let Some(c) = s.chars().next() {
+                return c;
+            }
+            println!("Please enter at least one character.");
+        }
     }
 
     pub fn bool(&self) -> bool {
