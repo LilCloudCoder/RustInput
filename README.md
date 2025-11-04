@@ -27,7 +27,7 @@ fn main() {
     let name = input("Enter name: ").string();
     let agree = input("Agree? ").bool();
 
-    println!("{} {} {} {}", a, b, name, agree);
+    println!("{a} {b} {name} {agree}");
 }
 ```
 ### Types Supported:
